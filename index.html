@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Race</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1>Rocket Race</h1>
+
+    <!-- Display user balance -->
+    <h3>Balance: $<span id="balance">0.00</span></h3>
+
+    <!-- Deposit input -->
+    <div class="deposit-section">
+      <input type="number" id="depositAmount" placeholder="Enter deposit amount">
+      <button id="depositButton" class="btn">Deposit</button>
+    </div>
+
+    <!-- Rocket Selection -->
+    <h3>Select a Rocket:</h3>
+    <div class="button-section">
+      <button id="selectRocketA" class="btn rocket-select-btn">Rocket A (Low Risk)</button>
+      <button id="selectRocketB" class="btn rocket-select-btn">Rocket B (Medium Risk)</button>
+      <button id="selectRocketC" class="btn rocket-select-btn">Rocket C (High Risk)</button>
+    </div>
+
+    <!-- Bet input -->
+    <div class="bet-section">
+      <input type="number" id="betAmount" placeholder="Enter bet amount" disabled>
+    </div>
+
+    <!-- Rocket sections (initially hidden until a rocket is selected) -->
+    <div id="rocketASection" class="rocket-section hidden">
+      <div id="rocketA" class="rocket"></div>
+      <h2>Multiplier Rocket A: <span id="multiplierA">1x</span></h2>
+    </div>
+
+    <div id="rocketBSection" class="rocket-section hidden">
+      <div id="rocketB" class="rocket"></div>
+      <h2>Multiplier Rocket B: <span id="multiplierB">1x</span></h2>
+    </div>
+
+    <div id="rocketCSection" class="rocket-section hidden">
+      <div id="rocketC" class="rocket"></div>
+      <h2>Multiplier Rocket C: <span id="multiplierC">1x</span></h2>
+    </div>
+
+    <div class="control-buttons">
+      <button id="startButton" class="btn" disabled>Start Race</button>
+      <button id="cashOutButton" class="btn" disabled>Cash Out</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
