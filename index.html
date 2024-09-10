@@ -5,58 +5,81 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rocket Race</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 
-<body>
-  <div class="container">
-    <h1>Rocket Race</h1>
+<body class="bg-gray-100">
+
+  <div class="container mx-auto mt-10 bg-white shadow-lg rounded-lg p-8">
+    <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Rocket Race</h1>
 
     <!-- Display user balance -->
-    <h3>Balance: $<span id="balance">0.00</span></h3>
+    <div class="text-center mb-6">
+      <h3 class="text-2xl font-semibold">Balance: <span id="balance" class="text-green-600">$0.00</span></h3>
+    </div>
 
     <!-- Deposit input -->
-    <div class="deposit-section">
-      <input type="number" id="depositAmount" placeholder="Enter deposit amount">
-      <button id="depositButton" class="btn">Deposit</button>
+    <div class="flex justify-center mb-8">
+      <input type="number" id="depositAmount" placeholder="Enter deposit amount"
+        class="px-4 py-2 border border-gray-300 rounded-lg mr-4 w-64">
+      <button id="depositButton" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600">Deposit</button>
     </div>
 
     <!-- Rocket Selection -->
-    <h3>Select a Rocket:</h3>
-    <div class="button-section">
-      <button id="selectRocketA" class="btn rocket-select-btn">Rocket A (Low Risk)</button>
-      <button id="selectRocketB" class="btn rocket-select-btn">Rocket B (Medium Risk)</button>
-      <button id="selectRocketC" class="btn rocket-select-btn">Rocket C (High Risk)</button>
+    <h3 class="text-xl font-semibold text-center mb-4">Select a Rocket:</h3>
+    <div class="flex justify-center mb-8 space-x-4">
+      <button id="selectRocketA" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600">Rocket A (Low
+        Risk)</button>
+      <button id="selectRocketB" class="bg-yellow-500 text-white px-6 py-2 rounded-lg hover:bg-yellow-600">Rocket B
+        (Medium Risk)</button>
+      <button id="selectRocketC" class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600">Rocket C (High
+        Risk)</button>
     </div>
 
     <!-- Bet input -->
-    <div class="bet-section">
-      <input type="number" id="betAmount" placeholder="Enter bet amount" disabled>
+    <div class="flex justify-center mb-8">
+      <input type="number" id="betAmount" placeholder="Enter bet amount" disabled
+        class="px-4 py-2 border border-gray-300 rounded-lg w-64">
     </div>
 
     <!-- Rocket sections (initially hidden until a rocket is selected) -->
-    <div id="rocketASection" class="rocket-section hidden">
-      <div id="rocketA" class="rocket"></div>
-      <h2>Multiplier Rocket A: <span id="multiplierA">1x</span></h2>
+    <div id="raceArea" class="flex justify-between mx-auto w-full h-96 bg-gray-200 relative">
+      <!-- Rocket A -->
+      <div id="rocketASection" class="flex flex-col items-center">
+        <div id="rocketA" class="bg-green-500 w-10 h-10 absolute" style="bottom: 0;"></div>
+        <h2 class="text-xl mt-4">Multiplier Rocket A: <span id="multiplierA">1x</span></h2>
+      </div>
+
+      <!-- Rocket B -->
+      <div id="rocketBSection" class="flex flex-col items-center">
+        <div id="rocketB" class="bg-yellow-500 w-10 h-10 absolute" style="bottom: 0;"></div>
+        <h2 class="text-xl mt-4">Multiplier Rocket B: <span id="multiplierB">1x</span></h2>
+      </div>
+
+      <!-- Rocket C -->
+      <div id="rocketCSection" class="flex flex-col items-center">
+        <div id="rocketC" class="bg-red-500 w-10 h-10 absolute" style="bottom: 0;"></div>
+        <h2 class="text-xl mt-4">Multiplier Rocket C: <span id="multiplierC">1x</span></h2>
+      </div>
     </div>
 
-    <div id="rocketBSection" class="rocket-section hidden">
-      <div id="rocketB" class="rocket"></div>
-      <h2>Multiplier Rocket B: <span id="multiplierB">1x</span></h2>
-    </div>
-
-    <div id="rocketCSection" class="rocket-section hidden">
-      <div id="rocketC" class="rocket"></div>
-      <h2>Multiplier Rocket C: <span id="multiplierC">1x</span></h2>
-    </div>
-
-    <div class="control-buttons">
-      <button id="startButton" class="btn" disabled>Start Race</button>
-      <button id="cashOutButton" class="btn" disabled>Cash Out</button>
+    <!-- Control buttons -->
+    <div class="flex justify-center space-x-4">
+      <button id="startButton" class="bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-blue-600" disabled>Start
+        Race</button>
+      <button id="cashOutButton" class="bg-green-500 text-white px-6 py-2 rounded-lg hover:bg-green-600" disabled>Cash
+        Out</button>
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Notification container (initially hidden) -->
+  <div id="notification" class="fixed top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-lg hidden"></div>
+
+  <!-- Script files -->
+  <script src="deposit.js"></script> <!-- Handles deposit -->
+  <script src="game.js"></script> <!-- Handles game logic -->
+  <script src="notification.js"></script> <!-- Handles notifications -->
+
 </body>
 
 </html>
