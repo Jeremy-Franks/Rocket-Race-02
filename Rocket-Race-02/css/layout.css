@@ -1,0 +1,86 @@
+/* Layout for Main Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.balance-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.rocket-selection {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.bet-section, .deposit-section {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.race-area {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  margin: 20px 0;
+  background-color: #121212; /* Dark background */
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+}
+
+.rocket-section {
+  display: inline-block;
+  margin: 10px;
+}
+
+/* Countdown Timer Styling */
+.countdown-timer {
+  font-size: 24px;
+  text-align: center;
+  color: #F5F5F5;
+  margin: 20px 0;
+}
+
+/* Loader Style */
+.loader {
+  border: 8px solid rgba(255, 255, 255, 0.3); /* Light grey */
+  border-top: 8px solid #00FF7F; /* Neon green */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000; /* Ensures the loader appears above everything */
+}
+
+/* Animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Dynamic Background */
+.dynamic-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('path/to/background.jpg') repeat-x;
+  animation: scrollBackground 10s linear infinite;
+  z-index: -1;
+}
+
+/* Parallax effect for background */
+@keyframes scrollBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: -1000px 0; }
+}

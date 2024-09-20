@@ -1,0 +1,18 @@
+.notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+  color: #fff; /* White text */
+  font-size: 16px;
+  border-radius: 5px;
+  display: none; /* Hidden by default */
+  z-index: 9999; /* Very high z-index */
+}
+
+/* When the notification is triggered, it will be displayed */
+.show-notification {
+  display: block !important; /* Make sure it forces display */
+  opacity: 1;
+}

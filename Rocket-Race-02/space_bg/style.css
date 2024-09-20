@@ -1,0 +1,29 @@
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to top, #00c5d5, #006a92, #003366, #001a33); /* Space gradient */
+    overflow: hidden; /* Ensure stars stay within the container */
+}
+
+/* Star styles */
+.star {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 2s infinite ease-in-out alternate;
+}
+
+/* Star styles with animation */
+
+@keyframes twinkle {
+    from {
+        opacity: 0.8;
+    }
+    to {
+        opacity: 0.8; /* Dimmer at the lowest point */
+    }
+}

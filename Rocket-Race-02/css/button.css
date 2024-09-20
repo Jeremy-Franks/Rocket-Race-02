@@ -1,0 +1,18 @@
+/* Common Button Styles */
+button {
+  background-color: rgba(255, 255, 255, 0.1); /* Transparent button */
+  border: none;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effects */
+button:hover {
+  background-color: #00FF7F; /* Neon Green */
+  box-shadow: 0px 0px 15px rgba(0, 255, 127, 0.7); /* Glowing effect */
+  transition: all 0.2s ease;
+}

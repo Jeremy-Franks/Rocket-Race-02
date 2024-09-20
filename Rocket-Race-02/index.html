@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rocket Race</title>
+
+  <!-- Link the external CSS files from the "css" folder -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/button.css">
+  <link rel="stylesheet" href="css/rocket.css">
+  <link rel="stylesheet" href="css/notification.css">
+  <link rel="stylesheet" href="css/layout.css">
+</head>
+
+<body>
+
+  <!-- Top Bar Section -->
+  <div class="top-bar">
+    <div class="logo">
+      <img src="path/to/logo.png" alt="Rocket Race Logo" class="logo-img">
+    </div>
+    <div class="balance">
+      <h3>Balance: <span id="balance">$0.00</span></h3>
+    </div>
+    <div class="profile">
+      <a href="#" class="profile-link">Profile</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="deposit-section">
+      <input type="number" id="depositAmount" placeholder="Enter deposit amount" class="input-field">
+      <button id="depositButton" class="deposit-button">Deposit</button>
+    </div>
+
+    <!-- Rocket Selection -->
+    <h3>Select a Rocket:</h3>
+    <div class="rocket-selection">
+      <button id="selectRocketA" class="rocket-button">Rocket A (Low Risk)</button>
+      <button id="selectRocketB" class="rocket-button">Rocket B (Medium Risk)</button>
+      <button id="selectRocketC" class="rocket-button">Rocket C (High Risk)</button>
+    </div>
+
+    <!-- Bet input -->
+    <div class="bet-section">
+      <input type="number" id="betAmount" placeholder="Enter bet amount" disabled class="input-field">
+    </div>
+
+    <!-- Single Time Display in the middle of the canvas -->
+    <!-- Single Time Display in the middle of the canvas -->
+    <div id="raceArea" class="race-area">
+      <div id="timeDisplay">Time: 1.00</div>
+
+      <!-- Dynamic Background -->
+      <div id="dynamicBackground" class="dynamic-background"></div>
+
+      <!-- Rocket A -->
+      <div id="rocketASection" class="rocket-section">
+        <div id="rocketA" class="rocket rocket-a"></div>
+      </div>
+
+      <!-- Rocket B -->
+      <div id="rocketBSection" class="rocket-section">
+        <div id="rocketB" class="rocket rocket-b"></div>
+      </div>
+
+      <!-- Rocket C -->
+      <div id="rocketCSection" class="rocket-section">
+        <div id="rocketC" class="rocket rocket-c"></div>
+      </div>
+    </div>
+
+
+    <!-- Control buttons -->
+    <div class="control-buttons">
+      <button id="startButton" class="start-button" disabled>Start Race</button>
+      <button id="cashOutButton" class="cashout-button" disabled>Cash Out</button>
+    </div>
+  </div>
+
+  <!-- Notification container -->
+  <div id="notification" class="notification"></div>
+
+
+  <!-- Countdown Timer -->
+  <div class="countdown-timer">
+    <span id="countdownDisplay">Race starts in: 5</span>
+  </div>
+
+  <!-- Loader -->
+  <div id="loader" class="loader"></div>
+
+
+
+  <!-- Link the external JS files from the "js" folder -->
+  <script src="js/deposit.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/notification.js"></script>
+
+</body>
+
+</html>

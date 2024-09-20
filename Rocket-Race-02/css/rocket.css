@@ -1,0 +1,23 @@
+/* Rocket Styling */
+.rocket {
+  width: 50px;
+  height: 100px;
+  position: absolute;
+  bottom: 0;
+  transition: bottom 0.1s linear;
+}
+
+/* Rocket A Styling (Low Risk) */
+.rocket-a {
+  background-color: #00FF7F; /* Neon green for low risk */
+}
+
+/* Rocket B Styling (Medium Risk) */
+.rocket-b {
+  background-color: #FFD700; /* Gold for medium risk */
+}
+
+/* Rocket C Styling (High Risk) */
+.rocket-c {
+  background-color: #FF4500; /* Orange-red for high risk */
+}
